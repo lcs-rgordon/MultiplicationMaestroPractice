@@ -55,6 +55,23 @@ class QuizViewModel {
         results.insert(newResult, at: 0)
     }
 
+    // The procedure: keep only the results the user asked to see
+    func keepResults(matching choice: String) -> [Result] {
+        var matchingResults: [Result] = []
+
+        for result in results {
+            if choice == "All" {
+                matchingResults.append(result)
+            } else if choice == "Correct" && result.answerCorrect == true {
+                matchingResults.append(result)
+            } else if choice == "Incorrect" && result.answerCorrect == false {
+                matchingResults.append(result)
+            }
+        }
+
+        return matchingResults
+    }
+
     // Ask a new question
     func newQuestion() {
         multiplicand = Int.random(in: 1...12)

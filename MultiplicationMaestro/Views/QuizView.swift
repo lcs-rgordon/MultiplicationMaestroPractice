@@ -10,6 +10,9 @@ struct QuizView: View {
     // MARK: - Stored properties
     @State var viewModel = QuizViewModel()
 
+    // Which results to show: All, Correct, or Incorrect
+    @State var choice: String = "All"
+
     // MARK: - Computed properties
     var body: some View {
         VStack(spacing: 20) {
@@ -49,7 +52,18 @@ struct QuizView: View {
                 .buttonStyle(.bordered)
             }
 
-            Spacer()
+            // Which results to show
+            Picker("Show", selection: $choice) {
+                Text("All").tag("All")
+                Text("Correct").tag("Correct")
+                Text("Incorrect").tag("Incorrect")
+            }
+            .pickerStyle(.segmented)
+
+            // Prior results, from the procedure
+            List(viewModel.keepResults(matching: choice)) { result in
+                ResultRowView(result: result)
+            }
         }
         .padding()
     }
