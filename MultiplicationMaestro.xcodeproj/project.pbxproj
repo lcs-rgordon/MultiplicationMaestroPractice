@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		81082799309A1175008C971D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		81082766309A1175008C971D /* MultiplicationMaestro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiplicationMaestro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -30,6 +31,7 @@
 		8108275D309A1175008C971D = {
 			isa = PBXGroup;
 			children = (
+				81082799309A1175008C971D /* README.md */,
 				81082768309A1175008C971D /* MultiplicationMaestro */,
 				81082767309A1175008C971D /* Products */,
 			);
